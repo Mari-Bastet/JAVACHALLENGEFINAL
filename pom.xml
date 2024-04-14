@@ -48,6 +48,18 @@
 			<scope>test</scope>
 		</dependency>
 
+
+<dependency>
+    <groupId>javax.validation</groupId>
+    <artifactId>validation-api</artifactId>
+    <version>2.0.1.Final</version>
+</dependency>
+
+		<dependency>
+			<groupId>br.com.fiap</groupId>
+			<artifactId>04-Jpa-Introducao</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
