@@ -1,4 +1,4 @@
-package fiap.br.challenge;
+package fiap.br.challenge.domain;
  
 import java.util.List;
 
@@ -15,17 +15,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
  
 @Entity
 @SequenceGenerator(name = "FILIAL_SEQ", sequenceName = "TB_FILIAL_SEQ", allocationSize = 1)
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Table(name = "TB_FILIAL")
 public class Filial {
  
@@ -81,5 +74,69 @@ public class Filial {
 	}
 	
 	public Filial(){}
+
+	public Long getIdFilial() {
+		return idFilial;
+	}
+
+	public void setIdFilial(Long idFilial) {
+		this.idFilial = idFilial;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getCodFilial() {
+		return codFilial;
+	}
+
+	public void setCodFilial(String codFilial) {
+		this.codFilial = codFilial;
+	}
+
+	public List<Compra> getCompras() {
+		return compras;
+	}
+
+	public void setCompras(List<Compra> compras) {
+		this.compras = compras;
+	}
  
 }

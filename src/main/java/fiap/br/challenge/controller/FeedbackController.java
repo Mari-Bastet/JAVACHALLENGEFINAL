@@ -1,4 +1,4 @@
-package fiap.br.challenge;
+package fiap.br.challenge.controller;
 
 import java.util.List;
 
@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import fiap.br.challenge.domain.Feedback;
+import fiap.br.challenge.repository.FeedbackRepository;
 
 @RestController
 @RequestMapping("/feedbacks")

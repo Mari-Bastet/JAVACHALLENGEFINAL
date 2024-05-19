@@ -1,4 +1,4 @@
-package fiap.br.challenge;
+package fiap.br.challenge.controller;
 
 import java.util.List;
 
@@ -10,6 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import fiap.br.challenge.FilialDTO;
+import fiap.br.challenge.repository.FilialRepository;
 
 @RestController
 @RequestMapping("/filial")

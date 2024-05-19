@@ -1,4 +1,4 @@
-package fiap.br.challenge;
+package fiap.br.challenge.domain;
 
 import java.util.Calendar;
 

@@ -1,4 +1,4 @@
-package fiap.br.challenge;
+package fiap.br.challenge.repository;
 
 import java.util.List;
 
@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import fiap.br.challenge.domain.Feedback;
 
 @Repository
 public interface FeedbackRepository extends JpaRepository<Feedback, Long>{

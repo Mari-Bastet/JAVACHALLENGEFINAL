@@ -1,4 +1,4 @@
-package fiap.br.challenge;
+package fiap.br.challenge.controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import fiap.br.challenge.domain.Produto;
+import fiap.br.challenge.repository.CompraRepository;
 
 @RestController
 @RequestMapping("/compras")

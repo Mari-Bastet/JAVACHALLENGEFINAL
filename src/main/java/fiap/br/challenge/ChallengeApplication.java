@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EntityScan("fiap.br.challenge")
-@EnableJpaRepositories("fiap.br.challenge")
+//@EntityScan("fiap.br.challenge.teste")
+//@EnableJpaRepositories("fiap.br.challenge.teste")
 public class ChallengeApplication {
 
 	public static void main(String[] args) {
