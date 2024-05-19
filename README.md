@@ -71,6 +71,8 @@ aumentarão sua autoestima e satisfação com a plataforma e-commerce.
 ![image](https://github.com/Mari-Bastet/JAVACHALLENGEFINAL/assets/82931897/3653c2ba-79b6-44c4-9f67-2372bd34cdec)
 
 
+### Diagrama de Classes
+![diagrama_classes_sprint2](https://github.com/Mari-Bastet/JAVACHALLENGEFINAL/assets/82931897/00b00f4d-54c0-41e7-afde-15003e6921aa)
 
 ## Passo a passo para rodar a aplicação
 
