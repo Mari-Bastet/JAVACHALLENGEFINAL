@@ -38,6 +38,38 @@
 			"response": []
 		},
 		{
+			"name": "Filiais e Compras",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\":\"mary\",\r\n    \"email\":\"mari@email.com\",\r\n    \"data_nascimento\":\"01/10/2003\",\r\n    \"endereco\":\"Rua x 123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/filial/relatorios/compras",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"filial",
+						"relatorios",
+						"compras"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Adicionar Cliente",
 			"request": {
 				"method": "POST",
