@@ -55,6 +55,11 @@ public class Compra {
         inverseJoinColumns = @JoinColumn(name = "ID_PRODUTO"))
     private List<Produto> produtos;
     
+    
+    @ManyToOne
+    @JoinColumn(name = "ID_FILIAL")
+    private Filial filial;
+    
 
 	public long getIdCompra() {
 		return idCompra;
