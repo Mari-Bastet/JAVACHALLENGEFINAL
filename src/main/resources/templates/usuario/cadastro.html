@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+   
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fffff0;
+            width: 320px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .container::before,
+        .container::after {
+            content: '';
+            position: absolute;
+            background-color: #e74c3c;
+            border-radius: 50%;
+            width: 160px;
+            height: 160px;
+            z-index: -1;
+        }
+        .container::before { top: -40px; left: -40px; }
+        .container::after { bottom: -40px; right: -40px; }
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #e74c3c;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+        footer {
+            text-align: center;
+            margin-top: 15px;
+        }
+        footer a {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .hamburger {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 30px;
+            height: 3px;
+            background-color: #333;
+            border-radius: 3px;
+        }
+        .hamburger::before, .hamburger::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            border-radius: 3px;
+        }
+        .hamburger::before { top: -10px; }
+        .hamburger::after { bottom: -10px; }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastrar</h1>
+        <p>Criar conta com e-mail e senha</p>
+        <form th:action="@{/clientes/adicionar}" th:object="${cliente}" method="post">
+            <div>
+                <label for="nome">Nome de Usuário:</label>
+                <input type="text" id="nome" th:field="*{nome}" placeholder="Nome de Usuário"/>
+            </div>
+            <div>7
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" th:field="*{endereco}" placeholder="Endereço"/>
+            </div>
+            <div>
+                <label for="data_nascimento">Data de Nascimento:</label>
+                <input type="date" id="data_nascimento" th:field="*{data_nascimento}" placeholder="Data de Nascimento"/>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" th:field="*{email}" placeholder="Email"/>
+            </div>
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" th:field="*{senha}" placeholder="Senha"/>
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <p>Já tem conta? <a href="/usuario/login">Logar</a></p>
+    </div>
+</body>
+</html>

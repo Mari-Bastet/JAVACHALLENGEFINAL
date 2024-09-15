@@ -1,6 +1,6 @@
 package fiap.br.challenge.domain;
 
-import java.util.Calendar;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.validation.constraints.Email;
@@ -40,11 +40,13 @@ public class Cliente {
 	@Email
 	private String email;
 	
-	@NotNull
-	private Calendar data_nascimento;
+//	@NotNull
+	private LocalDate data_nascimento;
 	
-	@NotNull
+//	@NotNull
 	private String endereco;
+	
+	private String senha;
 	
 	
     @OneToMany(mappedBy = "cliente", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
@@ -80,11 +82,11 @@ public class Cliente {
 	}
 
     @JsonFormat(pattern = "dd/MM/yyyy")
-	public Calendar getData_nascimento() {
+	public LocalDate getData_nascimento() {
 		return data_nascimento;
 	}
 
-	public void setData_nascimento(Calendar data_nascimento) {
+	public void setData_nascimento(LocalDate data_nascimento) {
 		this.data_nascimento = data_nascimento;
 	}
 
@@ -94,6 +96,14 @@ public class Cliente {
 
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
+	}
+
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
 	};
 	
 }
