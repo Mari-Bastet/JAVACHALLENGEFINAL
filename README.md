@@ -8,6 +8,11 @@ Victor Freitas    - RM99928  - Advanced Business with C#/Quality Assurance<br>
 Breno Giacoppini  - RM98695  - Artificial Intelligence <br>
 
 ## NOTAS DE ATUALIZAÇÃO - SPRINT 2
+- Criação de páginas de login e cadastro de usuário utiilizando Thymeleaf.
+- http://localhost:8080/stylishpro/clientes/adicionar
+- http://localhost:8080/stylishpro/clientes/login
+
+## NOTAS DE ATUALIZAÇÃO - SPRINT 2
 - Separação de diretórios seguindo arquitetura MVC;
 
 - Diagrama Entidade-Relacionamento e Diagrama de classes adicionados a página inicial do projeto;
