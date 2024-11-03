@@ -5,6 +5,7 @@
     <title>Login</title>
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
     <style>
+        /* Estilos principais */
         body {
             font-family: Arial, sans-serif;
             background-color: #f5f5e6;
@@ -15,6 +16,7 @@
             margin: 0;
         }
 
+        /* Container de login */
         .container {
             background-color: #fffff0;
             width: 320px;
@@ -46,6 +48,7 @@
             text-align: center;
         }
 
+        /* Estilos dos campos de entrada e botão */
         input {
             width: 100%;
             padding: 10px;
@@ -69,6 +72,7 @@
             background-color: #c0392b;
         }
 
+        /* Estilos do rodapé */
         footer {
             text-align: center;
             margin-top: 15px;
@@ -83,42 +87,54 @@
             text-decoration: underline;
         }
 
-        .hamburger {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 30px;
-            height: 3px;
-            background-color: #333;
-            border-radius: 3px;
+        /* Estilo da mensagem de erro */
+        .redText {
+            color: #ff0000;
+            font-weight: bold;
+            text-align: center;
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
         }
 
-        .hamburger::before, .hamburger::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-color: #333;
-            border-radius: 3px;
+        /* Centraliza o texto dentro do container pai */
+        .dialog-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
-
-        .hamburger::before { top: -10px; }
-        .hamburger::after { bottom: -10px; }
     </style>
-
 </head>
 <body>
-    <div class="container">
-        <div class="header">Login</div>
-        <p>Entre na sua conta usando e-mail e senha</p>
-        <form th:action="@{/clientes/login/realizarLogin}" method="post">
-            <input type="email" id="email" name="email" placeholder="Email" required />
-            <input type="password" id="senha" name="senha" placeholder="Senha" required />
-            <button type="submit">Login</button>
-        </form>
-        <footer>
-            <a href="/cadastrar">Não tem conta? Cadastrar</a>
-        </footer>
-    </div>
+
+<section class="container">
+    <h1 class="header">Login</h1>
+
+    <form action="/stylishpro/clientes/login" method="post">
+        <div class="dialog-row">
+            <label th:if="${param.error}" th:text="${session['SPRING_SECURITY_LAST_EXCEPTION'].message}" class="redText"></label>                   
+        </div>
+
+        <p>
+            <label for="username">Usuário:</label>
+            <input name="username" id="username" type="text" required>
+        </p>
+
+        <p>
+            <label for="senha">Senha:</label>
+            <input name="password" type="password" id="senha" required>
+        </p>
+
+        <p>
+            <button type="submit">Entrar</button>
+        </p>
+
+        <div class="register">
+            <p>Não possui conta? <a href="/stylishpro/clientes/adicionar">Cadastre-se!</a></p>
+        </div>
+    </form>
+</section>
+
 </body>
 </html>
