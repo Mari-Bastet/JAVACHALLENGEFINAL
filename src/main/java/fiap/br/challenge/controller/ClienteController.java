@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -69,26 +70,30 @@ public class ClienteController {
 
 		return "/usuario/login";
 	}
+	
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String carregaTemplateInicial() {
 
-	@RequestMapping(value = "/login/realizarLogin", method = RequestMethod.POST)
-	public String tentativaLoginCliente(@RequestParam("email") String email, @RequestParam("senha") String senha) {
-
-		try {
-			Long idCliente = clirepo.buscaClienteLogin(email, senha);
-
-			logger.debug("email" + email + "senha" + senha + "idcliente" + idCliente);
-			if (idCliente != null) {
-				return "/inicial";
-
-			} else {
-
-				return "redirect:/clientes/login";
-			}
-
-		} catch (Exception e) {
-			return "redirect:/erro";
-		}
+		return "inicial";
 	}
+	
+	@RequestMapping(value = "/dadoscliente", method = RequestMethod.POST)
+	public String carregaTemplateDadosUsuario(@RequestParam("id") Long id,  Model model) {
+
+		Optional<Cliente> cliente = clirepo.findById(id);
+        model.addAttribute("cliente", cliente);
+		return "/usuario/dados";
+	}
+	
+	@PostMapping("/clientes/atualizarPerfil")
+	public String atualizarPerfil(@ModelAttribute Cliente cliente) {
+	    // Lógica para atualizar o perfil do cliente
+	    if (cliente != null) {
+	        clirepo.save(cliente);
+	    }
+	    return "redirect:/clientes/dadoscliente?id=" + cliente.getId(); // Redireciona para o perfil atualizado
+	}
+
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	public ResponseEntity<String> excluirCliente(@PathVariable Long id) {

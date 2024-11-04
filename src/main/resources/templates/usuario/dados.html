@@ -101,7 +101,10 @@
             <h1>Olá, <span th:text="${cliente.nome}"></span>!</h1>
         </div>
         <div class="profile-form">
-            <form method="post" th:action="@{/atualizarPerfil}">
+            <form method="post" th:action="@{/clientes/atualizarPerfil}">
+            
+            <input type="hidden" th:value="${cliente.id}" name="id"/>
+            
                 <label>Gênero</label>
                 <input type="text" th:value="${cliente.sexo}" readonly>
                 

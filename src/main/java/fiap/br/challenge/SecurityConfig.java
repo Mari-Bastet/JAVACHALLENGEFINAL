@@ -39,7 +39,6 @@ public class SecurityConfig {
 	        @Override
 	        public boolean matches(CharSequence rawPassword, String encodedPassword) {
 	            boolean matches = super.matches(rawPassword, encodedPassword);
-	            System.out.println("Comparando senhas: " + rawPassword + " com " + encodedPassword + " = " + matches);
 	            return matches;
 	        }
 	    };
@@ -58,8 +57,6 @@ public class SecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 		return httpSecurity.csrf(AbstractHttpConfigurer::disable).formLogin(httpForm -> {
 			httpForm.loginPage("/clientes/login").permitAll();
-          //  httpForm.defaultSuccessUrl("", true); // Redirecionamento após sucesso
-
 			httpForm.failureUrl("/clientes/login?error=true"); // URL de erro
 		}).authorizeHttpRequests(registry -> {
 			registry.requestMatchers("/stylishpro/**", "/clientes/**", "/css/**", "/js/**","/swagger-ui/").permitAll();

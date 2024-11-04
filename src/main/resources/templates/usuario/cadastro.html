@@ -101,15 +101,15 @@
         <p>Criar conta com e-mail e senha</p>
         <form th:action="@{/clientes/adicionar}" th:object="${cliente}" method="post">
             <div>
-                <label for="nome">Nome de Usuário:</label>
-                <input type="text" id="nome" th:field="*{nome}" placeholder="Nome de Usuário"/>
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" th:field="*{nome}" placeholder="Nome"/>
             </div>
-            <div>7
-                <label for="endereco">Endereço:</label>
+            <div>
+                <label for="endereco">Endereço</label>
                 <input type="text" id="endereco" th:field="*{endereco}" placeholder="Endereço"/>
             </div>
             <div>
-                <label for="data_nascimento">Data de Nascimento:</label>
+                <label for="data_nascimento">Data de Nascimento</label>
                 <input type="date" id="data_nascimento" th:field="*{data_nascimento}" placeholder="Data de Nascimento"/>
             </div>
             <div>
@@ -117,7 +117,7 @@
                 <input type="email" id="email" th:field="*{email}" placeholder="Email"/>
             </div>
             <div>
-                <label for="senha">Senha:</label>
+                <label for="senha">Senha</label>
                 <input type="password" id="senha" th:field="*{senha}" placeholder="Senha"/>
             </div>
             <button type="submit">Cadastrar</button>

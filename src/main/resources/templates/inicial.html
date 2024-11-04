@@ -1,102 +1,105 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Cadastro</title>
-    <link th:href="@{/css/style.css}" rel="stylesheet"/>
-   
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5e6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            flex-direction: column;
-        }
+<meta charset="UTF-8">
+<title>Cadastro</title>
+<link th:href="@{/css/style.css}" rel="stylesheet" />
 
-        .container {
-            background-color: #fffff0;
-            width: 320px;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            position: relative;
-            text-align: center;
-        }
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f5f5e6;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	flex-direction: column;
+}
 
-        .container::before,
-        .container::after {
-            content: '';
-            position: absolute;
-            background-color: #e74c3c;
-            border-radius: 50%;
-            width: 160px;
-            height: 160px;
-            z-index: -1;
-        }
+.container {
+	background-color: #fffff0;
+	width: 320px;
+	padding: 30px;
+	border-radius: 20px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+	position: relative;
+	text-align: center;
+}
 
-        .container::before { top: -40px; left: -40px; }
-        .container::after { bottom: -40px; right: -40px; }
+.container::before, .container::after {
+	content: '';
+	position: absolute;
+	background-color: #e74c3c;
+	border-radius: 50%;
+	width: 160px;
+	height: 160px;
+	z-index: -1;
+}
 
-        .header {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #333;
-            text-align: center;
-        }
+.container::before {
+	top: -40px;
+	left: -40px;
+}
 
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #e74c3c;
-            border: none;
-            color: white;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+.container::after {
+	bottom: -40px;
+	right: -40px;
+}
 
-        button:hover {
-            background-color: #c0392b;
-        }
+.header {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	color: #333;
+	text-align: center;
+}
 
-        .menu {
-            display: flex;
-            gap: 10px;
-            margin-top: 20px;
-        }
+button {
+	width: 100%;
+	padding: 10px;
+	background-color: #e74c3c;
+	border: none;
+	color: white;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 10px;
+}
 
-        .menu button {
-            flex: 1;
-            background-color: #ff4500;
-        }
+button:hover {
+	background-color: #c0392b;
+}
 
-        .menu button:hover {
-            background-color: #ff6347;
-        }
-    </style>
+.menu {
+	display: flex;
+	gap: 10px;
+	margin-top: 20px;
+}
+
+.menu button {
+	flex: 1;
+	background-color: #ff4500;
+}
+
+.menu button:hover {
+	background-color: #ff6347;
+}
+</style>
 </head>
 <body>
 
-    <div class="container">
-        <h2 class="header">Você está logado</h2>
-        <p>Bem-vindo ao seu painel</p>
-    </div>
+	<div class="container">
+		<h2 class="header">Você está logado</h2>
+		<p>Bem-vindo ao seu painel</p>
+	</div>
 
-    <!-- Menu de navegação -->
-    <div class="menu">
-        <form th:action="@{/modelos/gerarmodelo}" method="get">
-            <button type="submit">Gerar Imagem</button>
-        </form>
-        <form th:action="@{/perfilCliente}" method="get">
-            <button type="submit">Perfil do Cliente</button>
-        </form>
-    </div>
+	<!-- Menu de navegação -->
+	<div class="menu">
+		<form th:action="@{/modelos/gerarmodelo}" method="get">
+			<button type="submit">Gerar Imagem</button>
+		</form>
+	</div>
 
 </body>
 </html>
