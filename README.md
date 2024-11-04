@@ -4,31 +4,24 @@
 Jaqueline Martins - RM551744 - DevOps & Cloud Computing <br>
 Mariana Bastos    - RM97510  - Java Advanced <br>
 Matheus Oliveira  - RM551155 - Mobile Development/Database <br>
-Victor Freitas    - RM99928  - Advanced Business with C#/Quality Assurance<br>
+Victor Freitas    - RM99982  - Advanced Business with C#/Quality Assurance<br>
 Breno Giacoppini  - RM98695  - Artificial Intelligence <br>
 
-## NOTAS DE ATUALIZAÇÃO - SPRINT 2
-- Criação de páginas de login e cadastro de usuário utiilizando Thymeleaf.
-- http://localhost:8080/stylishpro/clientes/adicionar
-- http://localhost:8080/stylishpro/clientes/login
+## NOTAS DE ATUALIZAÇÃO - SPRINT 4
+- Criação de página de geração de modelo utilizando Thymeleaf
+   http://localhost:8080/stylishpro/modelos/gerarmodelo?
+![image](https://github.com/user-attachments/assets/d18353b0-1a0e-486a-98db-52872f377538)
 
-## NOTAS DE ATUALIZAÇÃO - SPRINT 2
-- Separação de diretórios seguindo arquitetura MVC;
-
-- Diagrama Entidade-Relacionamento e Diagrama de classes adicionados a página inicial do projeto;
-
-- Inclusão do Swagger para documentação dos endpoints
-	Link: http://localhost:8080/swagger-ui/index.html
-
-- Inclusão da classe Filial e seus respectivos repositorios e controllers;
-
-- Inclusão da classe Tendencia;
-
-- Configuração de Logger para melhor desenvolvimento;
+- Inclusão de Spring Security e criptografia de senhas no login e signup
+   http://localhost:8080/stylishpro/clientes/adicionar
+   http://localhost:8080/stylishpro/clientes/login
   
-- Atualização do modelo relacional do banco de dados;
+- Utilização do Spring Actuator para monitoramento
+![image](https://github.com/user-attachments/assets/761b8838-4e50-4661-89d9-adbda5383872)
 
-- Atualização do modelo UML.
+  
+
+
 
 ## PROPOSTA DE SOLUÇÃO
 Com a chegada da pandemia, diversas empresas apresentaram grandes
@@ -95,7 +88,9 @@ aumentarão sua autoestima e satisfação com a plataforma e-commerce.
 
 ## Endpoints da API
 Arquivo contendo todos os endpoints feitos e testados até o momento no Postman se encontram na pasta "Documentacao".<br>
-__Também estão disponíveis pelo Swagger, conforme citado nas notas de atualização - Sprint 2.__
+__Também estão disponíveis pelo Swagger.__
+
+
 
 - CLIENTES E COMPRAS <br>
  Método: GET <br>
