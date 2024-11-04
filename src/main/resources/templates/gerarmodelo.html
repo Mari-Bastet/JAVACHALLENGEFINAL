@@ -2,9 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Cadastro</title>
+    <title>Geração de Imagem com IA</title>
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
-   
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +14,6 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            flex-direction: column;
         }
 
         .container {
@@ -49,6 +48,14 @@
             text-align: center;
         }
 
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
         button {
             width: 100%;
             padding: 10px;
@@ -58,45 +65,48 @@
             font-size: 16px;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 10px;
         }
 
         button:hover {
             background-color: #c0392b;
         }
 
-        .menu {
-            display: flex;
-            gap: 10px;
+        .image-container {
             margin-top: 20px;
+            text-align: center;
         }
 
-        .menu button {
-            flex: 1;
-            background-color: #ff4500;
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .menu button:hover {
-            background-color: #ff6347;
+        .error {
+            color: red;
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <h2 class="header">Você está logado</h2>
-        <p>Bem-vindo ao seu painel</p>
-    </div>
+<div class="container">
+    <h1 class="header">Gerar Imagem com IA</h1>
 
-    <!-- Menu de navegação -->
-    <div class="menu">
-        <form th:action="@{/modelos/gerarmodelo}" method="get">
-            <button type="submit">Gerar Imagem</button>
-        </form>
-        <form th:action="@{/perfilCliente}" method="get">
-            <button type="submit">Perfil do Cliente</button>
-        </form>
+    <!-- Formulário para entrada do prompt -->
+    <form action="/stylishpro/modelos/gerarmodelo" method="post">
+        <label for="prompt">Digite o prompt para a imagem:</label>
+        <input type="text" id="prompt" name="prompt" placeholder="Descrição da imagem..." required>
+        <button type="submit">Gerar Imagem</button>
+    </form>
+
+    <!-- Exibe o prompt e a imagem gerada -->
+    <div class="image-container" th:if="${imageUrl}">
+        <h2>Prompt: <span th:text="${prompt}"></span></h2>
+        <img th:src="${imageUrl}" alt="Imagem gerada">
     </div>
+</div>
 
 </body>
 </html>

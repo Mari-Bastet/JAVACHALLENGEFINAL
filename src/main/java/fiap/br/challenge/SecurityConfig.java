@@ -62,7 +62,7 @@ public class SecurityConfig {
 
 			httpForm.failureUrl("/clientes/login?error=true"); // URL de erro
 		}).authorizeHttpRequests(registry -> {
-			registry.requestMatchers("/stylishpro/**", "/clientes/**", "/css/**", "/js/**").permitAll();
+			registry.requestMatchers("/stylishpro/**", "/clientes/**", "/css/**", "/js/**","/swagger-ui/").permitAll();
 			registry.anyRequest().authenticated();
 		}).build();
 	}
